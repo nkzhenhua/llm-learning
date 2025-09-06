@@ -1,307 +1,338 @@
+If your ultimate goal is to learn about LLMs (Large Language Models), it's recommended to start with PyTorch because most LLM research and open-source implementations (like LLaMA, GPT, Mistral, etc.) are currently based on PyTorch.
 
+Here's a recommended learning path (from scratch to LLM):
 
-If your ultimate goal is to learn about LLMs (Large Language Models), it's recommended to start with **PyTorch**, as most current LLM research and open-source implementations (like LLaMA, GPT, Mistral, etc.) are based on PyTorch[cite: 1].
+## Learning Path Recommendation (From Zero to LLM)
 
-Recommended Learning Path (From Scratch to LLM) [cite: 1]
+**Phase 1: Master Deep Learning Fundamentals**
+* First, learn PyTorch (official tutorials + "Deep Learning from Scratch").
+* Understand the basic principles of neural networks (MLP, CNN, RNN).
+* Familiarize yourself with the Transformer architecture (the core).
 
-✅ **Phase 1: Master Deep Learning Fundamentals** [cite: 1]
-* Start with PyTorch (official tutorials + "Deep Learning from Scratch")[cite: 1].
-* Learn the basic principles of neural networks (MLP, CNN, RNN)[cite: 1].
-* Get familiar with the Transformer (the core architecture)[cite: 1].
+**Phase 2: Learn NLP-Related Technologies**
+* Understand tokenization (BPE, WordPiece).
+* Study Transformers and Self-Attention.
+* Practice with small NLP tasks (text classification, named entity recognition, etc.).
 
-✅ **Phase 2: Learn NLP-related Technologies** [cite: 1]
-* Understand tokenization (BPE, WordPiece)[cite: 1].
-* Study the Transformer and Self-Attention[cite: 1].
-* Practice with small NLP tasks (text classification, named entity recognition, etc.)[cite: 1].
+**Phase 3: Dive into LLM Training and Fine-tuning**
+* Study the architectures of GPT, BERT, and LLaMA.
+* Learn LoRA, QLoRA (low-cost fine-tuning methods).
+* Try training or fine-tuning LLMs using Hugging Face Transformers.
 
-✅ **Phase 3: Dive Deep into LLM Training and Fine-tuning** [cite: 1]
-* Study the architectures of GPT, BERT, and LLaMA[cite: 1].
-* Learn LoRA and QLoRA (low-cost fine-tuning)[cite: 1].
-* Try training or fine-tuning an LLM using Hugging Face Transformers[cite: 1].
+**Phase 4: Optimization and Deployment**
+* Learn about Quantization and Distillation.
+* Experiment with deploying models using vLLM, TGI, or TensorRT-LLM.
 
-✅ **Phase 4: Optimization and Deployment** [cite: 1]
-* Understand Quantization and Distillation[cite: 1].
-* Try deploying models with vLLM, TGI, and TensorRT-LLM[cite: 1].
+## Recommended Resources
 
----
+### Beginner (Quick Concept Understanding)
 
-## **🧠 1. Pre-training Tasks (Masked LM, Causal LM) & Fine-tuning Techniques** [cite: 2]
+* **"The Illustrated Transformer" by Jay Alammar**
+    👉 [https://jalammar.github.io/illustrated-transformer/](https://jalammar.github.io/illustrated-transformer/)
+    * Explains the Transformer architecture visually, making it ideal for beginners.
 
-### ✅ **Basic Concepts** [cite: 2]
+* **Hugging Face Course (Highly Recommended!)**
+    👉 [https://huggingface.co/learn/nlp-course](https://huggingface.co/learn/nlp-course)
+    * Lesson 3: Pretraining
+    * Lesson 4: Fine-tuning
+    * Designed for practical model training using the `transformers` library, offering high utility.
 
-* **Masked LM (e.g., BERT)**: Randomly masks some tokens in the input and has the model predict them[cite: 2].
-* **Causal LM (e.g., GPT)**: Predicts one token at a time by only looking at the left-side context, which is suitable for generation tasks[cite: 2].
-* **Fine-tuning Techniques**: Such as full-parameter fine-tuning, Adapter, LoRA, QLoRA, PEFT, etc.[cite: 2].
+* **In Chinese: "Hands-on Transformer" (Simplified Chinese Project)**
+    👉 GitHub: [https://github.com/datawhalechina/torch-transformers](https://github.com/datawhalechina/torch-transformers)
+    * Covers everything from the Transformer architecture to pre-training tasks and downstream fine-tuning.
 
-### 📘 **Recommended Resources** [cite: 2]
+### Advanced (In-depth Mechanisms and Practice)
 
-#### 📗 **Beginner (Quickly Grasp Concepts)** [cite: 2]
+* **Recommended Papers:**
+    * BERT Original Paper: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+    * GPT Original Paper: Language Models are Unsupervised Multitask Learners
 
-* ***The Illustrated Transformer*** by Jay Alammar [cite: 2]
-    👉 [https://jalammar.github.io/illustrated-transformer/](https://jalammar.github.io/illustrated-transformer/) [cite: 2]
+* **Practical Recommendations (LoRA/PEFT):**
+    * PEFT Official Documentation: [https://huggingface.co/docs/peft/index](https://huggingface.co/docs/peft/index)
+    * LoRA Tutorial Chinese Translation (Zhihu):
+        👉 [https://zhuanlan.zhihu.com/p/610674306](https://zhuanlan.zhihu.com/p/610674306)
 
-    > Explains the Transformer visually, perfect for beginners[cite: 2].
+## Suggested Learning Sequence (Combining Both Parts)
 
-* **Hugging Face Course** (Recommended!) [cite: 2]
-    👉 [https://huggingface.co/learn/nlp-course](https://huggingface.co/learn/nlp-course) [cite: 2]
-    * Lesson 3: Pretraining [cite: 2]
-    * Lesson 4: Fine-tuning [cite: 2]
-
-    > Designed for actual model training using the `transformers` library, highly practical[cite: 2].
-
-* **Chinese:动手学Transformer** (Hands-on Transformer) [cite: 2]
-    👉 GitHub: [https://github.com/datawhalechina/torch-transformers](https://github.com/datawhalechina/torch-transformers) [cite: 2]
-
-    > Covers everything from the Transformer architecture to pre-training tasks and downstream fine-tuning[cite: 2].
-
-#### 📘 **Advanced (In-depth Mechanisms and Practice)** [cite: 2]
-
-* **Paper Recommendations**: [cite: 2]
-
-    * BERT Original Paper: [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805) [cite: 2]
-    * GPT Original Paper: [Language Models are Unsupervised Multitask Learners](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) [cite: 2]
-
-* **Practical Recommendations (LoRA/PEFT)** [cite: 2]
-
-    * PEFT Official Documentation: [https://huggingface.co/docs/peft/index](https://huggingface.co/docs/peft/index) [cite: 2]
-    * LoRA [cite: 3] Tutorial Chinese Translation (Zhihu) [cite: 3]
-    👉 [https://zhuanlan.zhihu.com/p/610674306](https://zhuanlan.zhihu.com/p/610674306) [cite: 3]
+1.  First, use Hugging Face to learn the Transformer architecture, pre-training, and fine-tuning mechanisms.
+2.  Then, read the GPT-3 paper to understand in-context learning.
+3.  Next, practice various prompt engineering techniques (few-shot, CoT, ReAct).
+4.  Finally, delve into efficient fine-tuning methods like LoRA/QLoRA.
 
 ---
 
-## **🎯 2. Prompt Engineering & In-Context Learning Principles** [cite: 3]
-
-### ✅ **Core Concepts** [cite: 3]
-
-* **Prompt Engineering**: Using a specific template to guide a model to generate more accurate output[cite: 3].
-* **In-Context Learning (ICL)**: Without modifying parameters, you give the model some examples, and it learns how to complete the task[cite: 3].
-
-### 📘 **Recommended Resources** [cite: 3]
-
-#### 📗 **Beginner Understanding** [cite: 3]
-
-* **Prompt Engineering Guide** (Very comprehensive) [cite: 3]
-    👉 [https://github.com/dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) [cite: 3]
-
-    > Covers common strategies like Few-shot, Chain-of-Thought (CoT), ReAct, and is continuously updated[cite: 3].
-
-* **OpenAI Official Tutorial: Prompt Engineering for Developers** [cite: 3]
-    👉 [https://platform.openai.com/docs/guides/prompt-engineering](https://platform.openai.com/docs/guides/prompt-engineering) [cite: 3]
-
-    > Designed specifically for ChatGPT/GPT-4 users[cite: 3].
-
-* **Chinese Explanation Videos (Bilibili recommended)** [cite: 3]
-
-    * Search for keywords like "Prompt Engineering 原理" (Prompt Engineering Principles) or "In-Context Learning 机制" (In-Context Learning Mechanisms)[cite: 3]. There are many good NLP bloggers[cite: 3].
-    * Recommended: Videos from PaddlePaddle and the Hugging Face Chinese community[cite: 3].
-
-#### 📘 **Advanced Resources** [cite: 4]
-
-* **Paper Recommendations**: [cite: 4]
-
-    * GPT-3 Original Paper (Source of ICL theory) [cite: 4]
-        👉 [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165) [cite: 4]
-    * Chain-of-Thought Prompting paper [cite: 4]
-        👉 [https://arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903) [cite: 4]
-
-        > Significantly improves performance on complex reasoning problems[cite: 4].
-
-* **Video Course: CS324 @ Stanford (Large [cite: 4] Language Models)** [cite: 4]
-    👉 [https://web.stanford.edu/class/cs324/](https://web.stanford.edu/class/cs324/) [cite: 4]
-
-    > Covers the latest cutting-edge topics, including ICL, prompt, alignment, and other core LLM subjects[cite: 4].
+These are two excellent learning directions! Here are high-quality learning paths and recommended resources for the two themes you mentioned (primarily English resources, with some interspersed Chinese video/blog explanations):
 
 ---
 
-## 🧩 **Suggested Learning Order (Combining both parts)** [cite: 4]
+## 🧠 1. **Pre-training Tasks (Masked LM, Causal LM) and Fine-tuning Techniques**
 
-1.  First, use Hugging Face to learn the Transformer architecture, pre-training, and fine-tuning mechanisms[cite: 4].
-2.  Then, read the GPT-3 paper to understand what in-context learning is[cite: 4].
-3.  Next, practice various prompt engineering techniques (few-shot, CoT, ReAct)[cite: 4].
-4.  Finally, dive into efficient fine-tuning methods like LoRA/QLoRA[cite: 4].
+### ✅ Basic Concepts
 
----
+* **Masked LM (e.g., BERT):** Randomly masks some tokens in the input and expects the model to predict them.
+* **Causal LM (e.g., GPT):** Looks only at the left context and predicts tokens one by one, suitable for generation tasks.
+* **Fine-tuning Techniques:** Includes full parameter fine-tuning, Adapters, LoRA, QLoRA, PEFT, etc.
 
-This is great! Here is a customized **8-Week LLM Learning Plan** for you, with the goal of: mastering the core principles of LLMs, fine-tuning methods, Prompt Engineering, and inference mechanisms, ultimately being able to independently build and deploy an LLM application[cite: 4].
+### 📘 Recommended Resources
 
----
+#### 📗 Beginner (Quick Concept Understanding)
 
-# 🧭 **8-Week LLM Learning Plan (Engineering + Research Focus)** [cite: 4]
+* **"The Illustrated Transformer" by Jay Alammar**
+    👉 [https://jalammar.github.io/illustrated-transformer/](https://jalammar.github.io/illustrated-transformer/)
+    > Explains the Transformer visually, making it very suitable for beginners.
 
-### 👨‍💻 **Approximate Weekly Time Commitment: 8-12 hours (Flexible)** [cite: 4]
+* **Hugging Face Course** (Recommended!)
+    👉 [https://huggingface.co/learn/nlp-course](https://huggingface.co/learn/nlp-course)
+    * Lesson 3: Pretraining
+    * Lesson 4: Fine-tuning
+    > Completely designed for practical model training using the `transformers` library, offering high utility.
 
-Each week includes three parts: [cite: 4]
+* **In Chinese: "Hands-on Transformer"** (Simplified Chinese Project)
+    👉 GitHub: [https://github.com/datawhalechina/torch-transformers](https://github.com/datawhalechina/torch-transformers)
+    > Covers everything from the Transformer architecture to pre-training tasks and downstream fine-tuning.
 
-* 🧠 Theory Learning [cite: 4]
-* 🛠️ Hands-on Practice [cite: 4]
-* 🔗 Resource Links [cite: 4]
+#### 📘 Advanced (In-depth Mechanisms and Practice)
 
----
+* **Recommended Papers:**
+    * BERT Original Paper: [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
+    * GPT Original Paper: [Language Models are Unsupervised Multitask Learners](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
 
-## **Week 1: Transformer Architecture & Pre-training Concepts** [cite: 4]
-
-### 🧠 **Theory** [cite: 4]
-
-* Transformer Architecture and Attention [cite: 4]
-* Masked LM vs. Causal LM [cite: 4]
-* Difference between Pre-training and Downstream Tasks [cite: 4]
-
-### 🛠️ **Practice** [cite: 4]
-
-* Load BERT and GPT-2 with `transformers` [cite: 4]
-* Use GPT-2 to generate text and experience causal LM [cite: 4]
-
-### 🔗 **Resources** [cite: 4]
-
-* [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) [cite: 4]
-* [Hugging Face NLP Course Chapter 1–4](https://huggingface.co/learn/nlp-course) [cite: 4]
-* [Transformers Documentation Introduction](https://huggingface.co/docs/transformers/index) [cite: 4]
+* **Practical Recommendations (LoRA/PEFT)**
+    * PEFT Official Documentation: [https://huggingface.co/docs/peft/index](https://huggingface.co/docs/peft/index)
+    * LoRA Tutorial Chinese Translation (Zhihu):
+        👉 [https://zhuanlan.zhihu.com/p/610674306](https://zhuanlan.zhihu.com/p/610674306)
 
 ---
 
-## **Week 2: Hugging [cite: 5] Face Practice + Fine-tuning BERT on Custom Data** [cite: 5]
+## 🎯 2. **Prompt Engineering & In-Context Learning Principles**
 
-### 🧠 **Theory** [cite: 5]
+### ✅ Core Concepts
 
-* How Tokenizers Work [cite: 5]
-* Basic Fine-tuning Workflow [cite: 5]
+* **Prompt Engineering:** Using specific templates to guide the model to generate more accurate outputs.
+* **In-Context Learning (ICL):** Without modifying parameters, providing the model with a few examples allows it to learn how to complete tasks.
 
-### 🛠️ **Practice** [cite: 5]
+### 📘 Recommended Resources
 
-* Fine-tune BERT for sentiment analysis or text classification (IMDb dataset) [cite: 5]
-* Use Datasets + Trainer API [cite: 5]
+#### 📗 Beginner Understanding
 
-### 🔗 **Resources** [cite: 5]
+* **Prompt Engineering Guide** (Comprehensive)
+    👉 [https://github.com/dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
+    > Covers common strategies like Few-shot, Chain-of-Thought (CoT), ReAct, and is continuously updated.
 
-* [Hugging Face Docs - Fine-tuning BERT](https://huggingface.co/docs/transformers/training) [cite: 5]
-* [IMDb Dataset](https://huggingface.co/datasets/imdb) [cite: 5]
-* [Official Fine-tuning Tutorial Notebook](https://github.com/huggingface/notebooks/blob/main/course/en/chapter3/section3.ipynb) [cite: 5]
+* **OpenAI Official Tutorial: Prompt Engineering for Developers**
+    👉 [https://platform.openai.com/docs/guides/prompt-engineering](https://platform.openai.com/docs/guides/prompt-engineering)
+    > Specifically designed for ChatGPT/GPT-4 users.
 
----
+* **Chinese Explanation Videos (Recommended on Bilibili)**
+    * Search for keywords like "Prompt Engineering Principles," "In-Context Learning Mechanism," etc. Many NLP bloggers provide good explanations.
+    * Recommended: Videos from PaddlePaddle and Hugging Face Chinese Community.
 
-## **Week 3: Causal LM Training + GPT-2 Text Generation Techniques** [cite: 5]
+#### 📘 Advanced Resources
 
-### 🧠 **Theory** [cite: 5]
+* **Recommended Papers:**
+    * GPT-3 Original Paper (Theoretical basis for ICL):
+        👉 [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165)
+    * Chain-of-Thought Prompting Paper:
+        👉 [https://arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
+        > Significantly improves performance on complex reasoning tasks.
 
-* Decoding Strategies (Greedy, Beam, Top-k, Top-p) [cite: 5]
-* Meaning of Temperature and Repetition Penalty [cite: 5]
-
-### 🛠️ **Practice** [cite: 5]
-
-* Use GPT-2 for text generation tasks (e.g., writing poems, dialogues) [cite: 5]
-* Compare the effects of different decoding strategies [cite: 5]
-
-### 🔗 **Resources** [cite: 5]
-
-* [Detailed Blog on Text Generation](https://huggingface.co/blog/how-to-generate) [cite: 5]
-* [GPT2 Text Generation Notebook Example](https://github.com/huggingface/notebooks/blob/main/examples/text_generation.ipynb) [cite: 5]
-
----
-
-## **Week 4: Prompt Engineering & In-Context Learning** [cite: 5]
-
-### 🧠 **Theory** [cite: 5]
-
-* Zero-shot / Few-shot Prompting [cite: 5]
-* Chain-of-Thought (CoT) Prompting [cite: 5]
-* Introduction to ReAct Models [cite: 5]
-
-### 🛠️ **Practice** [cite: 5]
-
-* Construct prompts to perform sentiment classification and solve logic problems [cite: 5]
-* Compare performance with and without CoT [cite: 5]
-
-### 🔗 **Resources** [cite: 5]
-
-* [Prompt Engineering Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) [cite: 5]
-* [CoT Prompting Paper](https://arxiv.org/abs/2201.11903) [cite: 5]
-* [OpenAI Prompt Guide](https://platform.openai.com/docs/guides/prompt-engineering) [cite: 5]
+* **Video Course: CS324 @ Stanford (Large Language Models)**
+    👉 [https://web.stanford.edu/class/cs324/](https://web.stanford.edu/class/cs324/)
+    > Latest cutting-edge content, covering core LLM topics like ICL, prompts, and alignment.
 
 ---
 
-## **Week 5: LoRA / PEFT Fine-tuning Techniques** [cite: 5]
+## 🧩 Suggested Learning Sequence (Combining Both Parts)
 
-### 🧠 **Theory** [cite: 6]
-
-* Full-parameter fine-tuning [cite: 6] vs. LoRA/Adapter [cite: 6]
-* PEFT core idea: freezing the large model and only fine-tuning a few layers [cite: 6]
-
-### 🛠️ **Practice** [cite: 6]
-
-* Fine-tune LLaMA/Mistral/ChatGLM models using `peft` [cite: 6]
-* Try using QLoRA to train models in a low-VRAM environment [cite: 6]
-
-### 🔗 **Resources** [cite: 6]
-
-* [PEFT Official Documentation](https://huggingface.co/docs/peft) [cite: 6]
-* [QLoRA Original Paper](https://arxiv.org/abs/2305.14314) [cite: 6]
-* [Chinese QLoRA Tutorial](https://zhuanlan.zhihu.com/p/640898922) [cite: 6]
+1.  First, use Hugging Face to learn the Transformer architecture, pre-training, and fine-tuning mechanisms.
+2.  Then, read the GPT-3 paper to understand in-context learning.
+3.  Next, practice various prompt engineering techniques (few-shot, CoT, ReAct).
+4.  Finally, delve into efficient fine-tuning methods like LoRA/QLoRA.
 
 ---
 
-## **Week 6: LLM Application Development + Gradio Frontend** [cite: 6]
-
-### 🧠 **Theory** [cite: 6]
-
-* How to deploy a fine-tuned model [cite: 6]
-* Gradio/Streamlit frontend frameworks [cite: 6]
-
-### 🛠️ **Practice** [cite: 6]
-
-* Build a Chatbot interface [cite: 6]
-* Support prompt input, setting temperature, max tokens, and other parameters [cite: 6]
-
-### 🔗 **Resources** [cite: 6]
-
-* [Gradio Getting Started Guide](https://www.gradio.app/) [cite: 6]
-* [Deploying Hugging Face Models + Gradio Tutorial](https://huggingface.co/blog/gradio) [cite: 6]
+Great, here is a tailor-made **8-Week LLM Study Plan** designed to help you master the core principles of LLMs, fine-tuning methods, prompt engineering, inference mechanisms, and ultimately enable you to independently build and deploy an LLM application.
 
 ---
 
-## **Week 7: RAG (Retrieval-Augmented Generation) System Development** [cite: 6]
+# 🧭 8-Week LLM Study Plan (Engineering + Research Track)
 
-### 🧠 **Theory** [cite: 6]
+### 👨‍💻 Approximate Weekly Commitment: 8-12 hours (flexible)
 
-* RAG Principles: Retrieval + Generation [cite: 6]
-* Vector retrieval libraries (FAISS / Chroma / LlamaIndex) [cite: 6]
+Each week includes three parts:
 
-### 🛠️ **Practice** [cite: 6]
-
-* Build a local document search with FAISS [cite: 6]
-* Build an RAG pipeline with LangChain or LlamaIndex [cite: 6]
-
-### 🔗 **Resources** [cite: 6]
-
-* [Hugging Face RAG Tutorial](https://huggingface.co/docs/transformers/main/en/tasks/retrieval) [cite: 6]
-* [Chinese LangChain Tutorial](https://zhuanlan.zhihu.com/p/636471142) [cite: 6]
-* [LlamaIndex Getting Started](https://docs.llamaindex.ai/en/stable/) [cite: 6]
+* 🧠 Theoretical Learning
+* 🛠️ Practical Application
+* 🔗 Resource Links
 
 ---
 
-## **Week 8: Alignment Methods & Model Capability Enhancement** [cite: 6, 7]
+## **Week 1: Transformer Architecture and Pre-training Concepts**
 
-### 🧠 **Theory** [cite: 7]
+### 🧠 Theory
 
-* RLHF vs. DPO [cite: 7]
-* Preference data collection and modeling [cite: 7]
-* Instruction fine-tuning [cite: 7]
+* Transformer Architecture and Attention
+* Masked LM vs. Causal LM
+* Distinction between Pre-training and Downstream Tasks
 
-### 🛠️ **Practice** [cite: 7]
+### 🛠️ Practice
 
-* Experiment with `DPOTrainer` for instruction fine-tuning (using `trl`) [cite: 7]
-* Read and reproduce the Alpaca/LIMA project's fine-tuning [cite: 7]
+* Load BERT and GPT-2 using `transformers`.
+* Generate text with GPT-2 to experience Causal LM.
 
-### 🔗 **Resources** [cite: 7]
+### 🔗 Resource Links
 
-* [DPO Original Paper](https://arxiv.org/abs/2305.18290) [cite: 7]
-* [trl: Transformer Reinforcement Learning](https://huggingface.co/docs/trl/index) [cite: 7]
-* [Alpaca Replication Project](https://github.com/tatsu-lab/stanford_alpaca) [cite: 7]
+* [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+* [Hugging Face NLP Course Chapters 1-4](https://huggingface.co/learn/nlp-course)
+* [Transformers Documentation - Getting Started](https://huggingface.co/docs/transformers/index)
 
 ---
 
-## ✅ **After completion, you will be able to:** [cite: 7]
+## **Week 2: Hugging Face Practical Use + Fine-tuning BERT with Custom Data**
 
-* Understand the core mechanisms and training methods of LLMs[cite: 7].
-* Be proficient in using Hugging Face to train and deploy models[cite: 7].
-* Build practical LLM applications like fine-tuning, chatbots, and RAG systems[cite: 7].
-* Read mainstream LLM papers and quickly reproduce core technologies[cite: 7].
+### 🧠 Theory
+
+* How Tokenizers Work
+* Fine-tuning Basics
+
+### 🛠️ Practice
+
+* Fine-tune BERT for sentiment analysis or text classification (IMDb dataset).
+* Use the `Datasets` + `Trainer` API.
+
+### 🔗 Resource Links
+
+* [Hugging Face Documentation - Fine-tuning BERT](https://huggingface.co/docs/transformers/training)
+* [IMDb Dataset](https://huggingface.co/datasets/imdb)
+* [Official Fine-tuning Tutorial Notebook](https://github.com/huggingface/notebooks/blob/main/course/en/chapter3/section3.ipynb)
+
+---
+
+## **Week 3: Causal LM Training + GPT-2 Text Generation Techniques**
+
+### 🧠 Theory
+
+* Decoding Strategies (Greedy, Beam, Top-k, Top-p)
+* Meaning of Temperature and Repetition Penalty
+
+### 🛠️ Practice
+
+* Use GPT-2 for text generation tasks (e.g., writing poetry, dialogue).
+* Compare the effects of different decoding strategies.
+
+### 🔗 Resource Links
+
+* [Blog Post on Text Generation](https://huggingface.co/blog/how-to-generate)
+* [GPT-2 Text Generation Notebook Example](https://github.com/huggingface/notebooks/blob/main/examples/text_generation.ipynb)
+
+---
+
+## **Week 4: Prompt Engineering & In-Context Learning**
+
+### 🧠 Theory
+
+* Zero-shot / Few-shot Prompts
+* Chain-of-Thought (CoT) Prompting
+* Introduction to the ReAct Model
+
+### 🛠️ Practice
+
+* Construct prompts to achieve sentiment classification and logical problem-solving.
+* Compare performance with and without CoT.
+
+### 🔗 Resource Links
+
+* [Prompt Engineering Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
+* [CoT Prompting Paper](https://arxiv.org/abs/2201.11903)
+* [OpenAI Prompt Guide](https://platform.openai.com/docs/guides/prompt-engineering)
+
+---
+
+## **Week 5: LoRA / PEFT Fine-tuning Techniques**
+
+### 🧠 Theory
+
+* Full Parameter Fine-tuning vs. LoRA/Adapters
+* Core idea of PEFT: Freeze the large model, fine-tune only a few layers.
+
+### 🛠️ Practice
+
+* Fine-tune LLaMA/Mistral/ChatGLM models using `peft`.
+* Attempt to train models in low-memory environments using QLoRA.
+
+### 🔗 Resource Links
+
+* [PEFT Official Documentation](https://huggingface.co/docs/peft)
+* [QLoRA Original Paper](https://arxiv.org/abs/2305.14314)
+* [Chinese QLoRA Tutorial](https://zhuanlan.zhihu.com/p/640898922)
+
+---
+
+## **Week 6: LLM Application Development + Gradio Frontend**
+
+### 🧠 Theory
+
+* How to deploy fine-tuned models.
+* Frontend frameworks like Gradio/Streamlit.
+
+### 🛠️ Practice
+
+* Build a Chatbot interface.
+* Support prompt input, temperature settings, max tokens, and other parameters.
+
+### 🔗 Resource Links
+
+* [Gradio Getting Started](https://www.gradio.app/)
+* [Tutorial on Deploying Hugging Face Models with Gradio](https://huggingface.co/blog/gradio)
+
+---
+
+## **Week 7: RAG (Retrieval-Augmented Generation) System Development**
+
+### 🧠 Theory
+
+* RAG Principles: Search + Generation
+* Vector Databases (FAISS / Chroma / LlamaIndex)
+
+### 🛠️ Practice
+
+* Build a local document search using FAISS.
+* Construct a RAG pipeline using LangChain or LlamaIndex.
+
+### 🔗 Resource Links
+
+* [Hugging Face RAG Tutorial](https://huggingface.co/docs/transformers/main/en/tasks/retrieval)
+* [LangChain Chinese Tutorial](https://zhuanlan.zhihu.com/p/636471142)
+* [LlamaIndex Getting Started](https://docs.llamaindex.ai/en/stable/)
+
+---
+
+## **Week 8: Alignment Methods (Alignment) and Model Capability Improvement**
+
+### 🧠 Theory
+
+* RLHF vs. DPO
+* Preference Data Collection and Modeling
+* Instruction Tuning
+
+### 🛠️ Practice
+
+* Experiment with `DPOTrainer` for instruction tuning (using `trl`).
+* Read and replicate the fine-tuning of Alpaca/LIMA projects.
+
+### 🔗 Resource Links
+
+* [DPO Original Paper](https://arxiv.org/abs/2305.18290)
+* [trl: Transformer Reinforcement Learning](https://huggingface.co/docs/trl/index)
+* [Alpaca Replication Project](https://github.com/tatsu-lab/stanford_alpaca)
+
+---
+
+## ✅ After Completion, You Will Be Able To:
+
+* Understand the core mechanisms and training methods of LLMs.
+* Proficiently use Hugging Face for training and deploying models.
+* Build practical LLM applications such as chatbots and RAG systems.
+* Read mainstream LLM papers and quickly replicate core technologies.
+
+---
