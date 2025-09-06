@@ -1,0 +1,346 @@
+如果你的最终目标是学习 LLM（大语言模型），那么推荐 从 PyTorch 开始，因为目前大多数 LLM 研究和开源实现（如 LLaMA、GPT、Mistral 等）都是基于 PyTorch。
+
+学习路线推荐（从零到 LLM）
+
+✅ 第一阶段：掌握深度学习基础
+	•	先学 PyTorch（官方教程 + 《深度学习入门》）
+	•	学习神经网络基本原理（MLP、CNN、RNN）
+	•	熟悉 Transformer（核心架构）
+
+✅ 第二阶段：学习 NLP 相关技术
+	•	了解 tokenization（BPE、WordPiece）
+	•	研究 Transformer 和 Self-Attention
+	•	实践小型 NLP 任务（文本分类、命名实体识别等）
+
+✅ 第三阶段：深入 LLM 训练与微调
+	•	研究 GPT、BERT、LLaMA 的架构
+	•	学习 LoRA、QLoRA（低成本微调）
+	•	试着用 Hugging Face Transformers 训练或微调 LLM
+
+✅ 第四阶段：优化与部署
+	•	了解 量化（Quantization）、蒸馏（Distillation）
+	•	试着用 vLLM、TGI、TensorRT-LLM 部署模型
+
+
+
+📘 推荐资源
+
+📗 初级（快速理解概念）
+	•	《The Illustrated Transformer》 by Jay Alammar
+👉 https://jalammar.github.io/illustrated-transformer/
+用可视化方式讲 transformer，非常适合初学者。
+	•	Hugging Face Course（推荐！）
+👉 https://huggingface.co/learn/nlp-course
+	•	Lesson 3: Pretraining
+	•	Lesson 4: Fine-tuning
+完全针对实际模型训练设计，使用 transformers 库，实用性极高。
+	•	中文：动手学Transformer（简体中文项目）
+👉 GitHub: https://github.com/datawhalechina/torch-transformers
+从 Transformer 架构到预训练任务再到下游微调都有涉及。
+
+📘 进阶（深入机制和实战）
+	•	论文推荐：
+	•	BERT 原论文：BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+	•	GPT 原论文：Language Models are Unsupervised Multitask Learners
+	•	实战推荐（LoRA/PEFT）
+	•	PEFT 官方文档：https://huggingface.co/docs/peft/index
+	•	LoRA 教程中文翻译（知乎）
+👉 https://zhuanlan.zhihu.com/p/610674306
+
+学习顺序建议（结合两部分）
+	1.	先通过 Hugging Face 学会 transformer 架构、预训练与微调机制
+	2.	再读 GPT-3 论文，理解 in-context learning 是怎么一回事
+	3.	接着练习 prompt engineering 的各种技巧（few-shot, CoT, ReAct）
+	4.	最后深入 LoRA/QLoRA 等高效微调方式
+
+====================================
+
+非常好的两个学习方向！
+以下是你提到的两个主题的高质量学习路径和资源推荐（英文资源为主，也穿插一些中文讲解视频/博客）：
+
+---
+
+## 🧠 1. **预训练任务（Masked LM、Causal LM）与微调技术**
+
+### ✅ 基础概念入门
+
+* **Masked LM（如 BERT）**：输入中随机 mask 掉一些 token，让模型预测出来。
+* **Causal LM（如 GPT）**：只看左边上下文，一个 token 接一个 token 预测，适合生成任务。
+* **微调技术**：如全参数微调（Fine-tuning）、Adapter、LoRA、QLoRA、PEFT 等。
+
+### 📘 推荐资源
+
+#### 📗 初级（快速理解概念）
+
+* **《The Illustrated Transformer》** by Jay Alammar
+  👉 [https://jalammar.github.io/illustrated-transformer/](https://jalammar.github.io/illustrated-transformer/)
+
+  > 用可视化方式讲 transformer，非常适合初学者。
+
+* **Hugging Face Course**（推荐！）
+  👉 [https://huggingface.co/learn/nlp-course](https://huggingface.co/learn/nlp-course)
+
+  * Lesson 3: Pretraining
+  * Lesson 4: Fine-tuning
+
+  > 完全针对实际模型训练设计，使用 `transformers` 库，实用性极高。
+
+* **中文：动手学Transformer**（简体中文项目）
+  👉 GitHub: [https://github.com/datawhalechina/torch-transformers](https://github.com/datawhalechina/torch-transformers)
+
+  > 从 Transformer 架构到预训练任务再到下游微调都有涉及。
+
+#### 📘 进阶（深入机制和实战）
+
+* **论文推荐**：
+
+  * BERT 原论文：[BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
+  * GPT 原论文：[Language Models are Unsupervised Multitask Learners](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
+
+* **实战推荐（LoRA/PEFT）**
+
+  * PEFT 官方文档：[https://huggingface.co/docs/peft/index](https://huggingface.co/docs/peft/index)
+  * LoRA 教程中文翻译（知乎）
+    👉 [https://zhuanlan.zhihu.com/p/610674306](https://zhuanlan.zhihu.com/p/610674306)
+
+---
+
+## 🎯 2. **Prompt Engineering & In-Context Learning 原理**
+
+### ✅ 核心概念
+
+* **Prompt Engineering**：用特定模板引导模型生成更准确的输出。
+* **In-Context Learning（ICL）**：无需修改参数，给模型一些示例，它就能学会如何完成任务。
+
+### 📘 推荐资源
+
+#### 📗 初级理解
+
+* **Prompt Engineering Guide**（超全）
+  👉 [https://github.com/dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
+
+  > 涵盖 Few-shot, Chain-of-Thought (CoT), ReAct 等常见策略，持续更新。
+
+* **OpenAI 官方教程：Prompt Engineering for Developers**
+  👉 [https://platform.openai.com/docs/guides/prompt-engineering](https://platform.openai.com/docs/guides/prompt-engineering)
+
+  > 专为 ChatGPT/GPT-4 使用者设计。
+
+* **中文讲解视频（推荐 B站）**
+
+  * 搜索 “Prompt Engineering 原理”“In-Context Learning 机制”等关键词，有不少 NLP 博主讲解得不错。
+  * 推荐：飞桨、Hugging Face 中文社区相关视频。
+
+#### 📘 进阶资源
+
+* **论文推荐**：
+
+  * GPT-3 原论文（ICL 理论来源）
+    👉 [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165)
+  * Chain-of-Thought Prompting paper
+    👉 [https://arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
+
+    > 大大提升了复杂推理类问题的表现
+
+* **视频课：CS324 @ Stanford (Large Language Models)**
+  👉 [https://web.stanford.edu/class/cs324/](https://web.stanford.edu/class/cs324/)
+
+  > 最新前沿内容，包含 ICL、prompt、alignment 等 LLM 核心主题
+
+---
+
+## 🧩 学习顺序建议（结合两部分）
+
+1. 先通过 Hugging Face 学会 transformer 架构、预训练与微调机制
+2. 再读 GPT-3 论文，理解 in-context learning 是怎么一回事
+3. 接着练习 prompt engineering 的各种技巧（few-shot, CoT, ReAct）
+4. 最后深入 LoRA/QLoRA 等高效微调方式
+
+---
+
+太好了，下面是为你量身定制的 **8 周 LLM 学习计划表**，目标是：掌握 LLM 的核心原理、微调方法、Prompt 工程、推理机制，最终能够独立构建和部署一个 LLM 应用。
+
+---
+
+# 🧭 8 周 LLM 学习计划表（工程+研究方向）
+
+### 👨‍💻 每周大约投入：8～12 小时（可灵活调整）
+
+每周包含三个部分：
+
+* 🧠 理论学习
+* 🛠️ 实践操作
+* 🔗 资料链接
+
+---
+
+## **Week 1：Transformer 架构与预训练概念**
+
+### 🧠 理论
+
+* Transformer 架构与 Attention
+* Masked LM vs Causal LM
+* 预训练与下游任务区别
+
+### 🛠️ 实践
+
+* 用 `transformers` 加载 BERT 和 GPT-2
+* 让 GPT-2 生成文本，体验 causal LM
+
+### 🔗 资源链接
+
+* [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+* [Hugging Face NLP Course Chapter 1–4](https://huggingface.co/learn/nlp-course)
+* [Transformers 文档入门](https://huggingface.co/docs/transformers/index)
+
+---
+
+## **Week 2：Hugging Face 实战 + 自定义数据微调 BERT**
+
+### 🧠 理论
+
+* Tokenizer 工作原理
+* Fine-tuning 基础流程
+
+### 🛠️ 实践
+
+* 微调 BERT 做情感分析或文本分类（IMDb 数据集）
+* 使用 Datasets + Trainer API
+
+### 🔗 资源链接
+
+* [Hugging Face 文档 - Fine-tuning BERT](https://huggingface.co/docs/transformers/training)
+* [IMDb 数据集](https://huggingface.co/datasets/imdb)
+* [官方微调教程 notebook](https://github.com/huggingface/notebooks/blob/main/course/en/chapter3/section3.ipynb)
+
+---
+
+## **Week 3：Causal LM 训练 + GPT-2 文本生成技巧**
+
+### 🧠 理论
+
+* 解码策略（Greedy、Beam、Top-k、Top-p）
+* 温度与重复惩罚的含义
+
+### 🛠️ 实践
+
+* 用 GPT-2 做文本生成任务（如写诗、对话）
+* 对比不同解码策略效果
+
+### 🔗 资源链接
+
+* [文本生成详解博客](https://huggingface.co/blog/how-to-generate)
+* [GPT2 生成文本 notebook 示例](https://github.com/huggingface/notebooks/blob/main/examples/text_generation.ipynb)
+
+---
+
+## **Week 4：Prompt Engineering & In-Context Learning**
+
+### 🧠 理论
+
+* Zero-shot / Few-shot Prompt
+* Chain-of-Thought（CoT）Prompting
+* ReAct 模型简介
+
+### 🛠️ 实践
+
+* 构造 prompt 来实现情感分类、逻辑题解答
+* 对比有无 CoT 时的表现差异
+
+### 🔗 资源链接
+
+* [Prompt Engineering Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
+* [CoT Prompting 论文](https://arxiv.org/abs/2201.11903)
+* [OpenAI Prompt Guide](https://platform.openai.com/docs/guides/prompt-engineering)
+
+---
+
+## **Week 5：LoRA / PEFT 微调技术**
+
+### 🧠 理论
+
+* 全参数微调 vs LoRA/Adapter
+* PEFT 核心思想：冻结大模型，仅微调少数层
+
+### 🛠️ 实践
+
+* 使用 `peft` 微调 LLaMA/Mistral/ChatGLM 模型
+* 尝试用 QLoRA 在低显存环境训练模型
+
+### 🔗 资源链接
+
+* [PEFT 官方文档](https://huggingface.co/docs/peft)
+* [QLoRA 原论文](https://arxiv.org/abs/2305.14314)
+* [中文 QLoRA 教程](https://zhuanlan.zhihu.com/p/640898922)
+
+---
+
+## **Week 6：LLM 应用开发 + Gradio 前端**
+
+### 🧠 理论
+
+* 如何部署微调模型
+* Gradio/Streamlit 前端框架
+
+### 🛠️ 实践
+
+* 构建一个 Chatbot 界面
+* 支持 prompt 输入、设置温度、max tokens 等参数
+
+### 🔗 资源链接
+
+* [Gradio 入门文档](https://www.gradio.app/)
+* [部署 Hugging Face 模型 + Gradio 教程](https://huggingface.co/blog/gradio)
+
+---
+
+## **Week 7：RAG（检索增强生成）系统开发**
+
+### 🧠 理论
+
+* RAG 原理：搜索 + 生成
+* 向量检索库（FAISS / Chroma / LlamaIndex）
+
+### 🛠️ 实践
+
+* 用 FAISS 建立本地文档搜索
+* 用 LangChain 或 LlamaIndex 构建 RAG pipeline
+
+### 🔗 资源链接
+
+* [Hugging Face RAG 教程](https://huggingface.co/docs/transformers/main/en/tasks/retrieval)
+* [LangChain 中文教程](https://zhuanlan.zhihu.com/p/636471142)
+* [LlamaIndex 入门](https://docs.llamaindex.ai/en/stable/)
+
+---
+
+## **Week 8：对齐方法（Alignment）与模型能力提升**
+
+### 🧠 理论
+
+* RLHF vs DPO
+* Preference 数据收集与建模
+* 指令微调（Instruction Tuning）
+
+### 🛠️ 实践
+
+* 试验 `DPOTrainer` 进行指令微调（使用 `trl`）
+* 阅读并复现 Alpaca/LIMA 项目微调
+
+### 🔗 资源链接
+
+* [DPO 原论文](https://arxiv.org/abs/2305.18290)
+* [trl: Transformer Reinforcement Learning](https://huggingface.co/docs/trl/index)
+* [Alpaca 复现项目](https://github.com/tatsu-lab/stanford_alpaca)
+
+---
+
+## ✅ 学完后你将能：
+
+* 理解 LLM 的核心机制与训练方法
+* 熟练使用 Hugging Face 训练与部署模型
+* 构建微调/对话/RAG 等实际 LLM 应用
+* 阅读 LLM 领域的主流论文，并快速复现核心技术
+
+---
+
